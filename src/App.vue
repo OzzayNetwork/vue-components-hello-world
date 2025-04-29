@@ -1,16 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+  <!-- adding props -->
+  <GreetComponent name="Bruce" heroName="Batman" />
+  <GreetComponent name="Clark" heroName="Superman"/>
+  <GreetComponent :name="name" :heroName="channel"/>
+
+  <!-- include v bind directives for none string variables -->
+  <Article title="Article Title" :likes="50" :isPublished="true"/>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Article from './components/Article.vue';
+import GreetComponent from './components/Great.vue';
+
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components:{
+    GreetComponent,
+    Article
+  },
+
+  data(){
+    return{
+      name:"kelvin",
+      channel:'Brighter Monday'
+    }
   }
+  
 }
 </script>
 
