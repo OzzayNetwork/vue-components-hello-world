@@ -1,13 +1,16 @@
 <template>
     <div>
-        <input type="text">
+        <input type="text" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)">
 
     </div>
 </template>
 
 <script>
     export default {
-        name:'InputComponet'
+        name:'InputComponet',
+        props:{
+            modelValue: String
+        }
     }
 </script>
 

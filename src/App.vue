@@ -25,6 +25,10 @@
     <InputComponet/>
   <hr>
 
+  <h2>SLots have been started</h2>
+  <cardComponent/>
+  <hr>
+
 </template>
 
 <script>
@@ -33,6 +37,7 @@ import GreetComponent from './components/Great.vue';
 import ComponentC from  './components/ComponentC.vue'
 import PopupComponent from  './components/Popup.vue'
 import InputComponet from './components/Input.vue'
+import CardComponent from './components/Card.vue'
 
 
 export default {
@@ -42,7 +47,8 @@ export default {
     Article,
     ComponentC,
     PopupComponent,
-    InputComponet
+    InputComponet,
+    CardComponent
   },
 
   //this enables us to share data across several leveles of components
