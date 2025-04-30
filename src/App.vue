@@ -23,10 +23,33 @@
     <input type="text" v-model="newName">
 
     <InputComponet/>
+
+    
   <hr>
 
   <h2>SLots have been started</h2>
-  <cardComponent/>
+  <cardComponent>
+    <p>Card Content</p>
+  </cardComponent>
+  <cardComponent>
+   <h3>Default content 2</h3>
+  </cardComponent>
+
+  <cardComponent>
+  </cardComponent>
+
+  <cardComponent>
+    <template v-slot:header>
+      <h3>Header</h3>
+    </template>
+
+    <template v-slot:default>
+      <h3>The Content</h3>
+    </template>
+    <template v-slot:footer>
+      <button>View More</button>
+    </template>
+  </cardComponent>
   <hr>
 
 </template>

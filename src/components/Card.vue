@@ -1,12 +1,24 @@
 <template>
     <div class="card">
-        card content
+       <slot>Default Conetent</slot>
+
+       <div id="card-header">
+        <slot name="header"></slot>
+       </div>
+       <div id="card-content">
+        <!-- will treated as default if it has no name -->
+        <slot></slot>
+       </div>
+       <div id="card-footer">
+        <slot name="footer"></slot>
+       </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'CardComponent'
+        name: 'CardComponent',
+        
     }
 </script>
 
