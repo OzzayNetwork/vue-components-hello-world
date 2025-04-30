@@ -12,10 +12,18 @@
   <h2>Provide and injecting components</h2>
   <h3>App Component username is {{ myName }}</h3>
   <ComponentC/>
+  
   <hr>
 
   <h2>Custom Events</h2>
+  <button @click="showPopup=true">Show Pop Up</button>
+  <PopupComponent v-show="showPopup" @close="closePopup" />
   <hr/>
+    <h2>Components and v-model in Vue.js 3</h2>
+    <input type="text" v-model="newName">
+
+    <InputComponet/>
+  <hr>
 
 </template>
 
@@ -23,6 +31,8 @@
 import Article from './components/Article.vue';
 import GreetComponent from './components/Great.vue';
 import ComponentC from  './components/ComponentC.vue'
+import PopupComponent from  './components/Popup.vue'
+import InputComponet from './components/Input.vue'
 
 
 export default {
@@ -30,7 +40,9 @@ export default {
   components:{
     GreetComponent,
     Article,
-    ComponentC
+    ComponentC,
+    PopupComponent,
+    InputComponet
   },
 
   //this enables us to share data across several leveles of components
@@ -45,7 +57,15 @@ export default {
     return{
       name:"kelvin",
       channel:'Brighter Monday',
-      myName:'Kelvin'
+      myName:'Kelvin',
+      showPopup:false,
+      newName:''
+    }
+  },
+  methods:{
+    closePopup(name){
+      this.showPopup=false
+      console.log('name',name)
     }
   }
   
