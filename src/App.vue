@@ -6,7 +6,7 @@
   <GreetComponent :name="name" :heroName="channel"/>
 
   <!-- include v bind directives for none string variables -->
-  <Article id="my-article" title="Article Title" :likes="50" :isPublished="true"/>
+  <Article id="my-article" title="Kelvin Wins" :likes="50" :isPublished="true"/>
 
 </template>
 
