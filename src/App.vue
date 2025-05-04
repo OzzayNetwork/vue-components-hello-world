@@ -25,6 +25,8 @@
     <InputComponet/>
 
     
+
+    
   <hr>
 
   <h2>SLots have been started</h2>
@@ -51,6 +53,24 @@
     </template>
   </cardComponent>
   <hr>
+  <h2>Vue JS 3 Tutorial - 39 - Slots Props</h2>
+  <NameList/>
+  <hr/>
+
+  <h4>App component tetx</h4>
+
+
+    <childStyles/>
+  <hr>
+  <h1>Dynamic Components</h1>
+  <button>Tab A</button>
+  <button>Tab B</button>
+  <button>Tab C</button>
+  <TabA/>
+  <TabB/>
+  <TabC/>
+  <hr>
+  
 
 </template>
 
@@ -61,6 +81,11 @@ import ComponentC from  './components/ComponentC.vue'
 import PopupComponent from  './components/Popup.vue'
 import InputComponet from './components/Input.vue'
 import CardComponent from './components/Card.vue'
+import NameList from './components/NameList'
+import ChildStyles from './components/ChildStyles.vue'
+import TabA from './components/TabA.vue'
+import TabB from './components/TabB.vue'
+import TabC from './components/TabC.vue'
 
 
 export default {
@@ -71,7 +96,12 @@ export default {
     ComponentC,
     PopupComponent,
     InputComponet,
-    CardComponent
+    CardComponent,
+    NameList,
+    ChildStyles,
+    TabA,
+    TabB,
+    TabC
   },
 
   //this enables us to share data across several leveles of components
@@ -110,4 +140,6 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+
 </style>
