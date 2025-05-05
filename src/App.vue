@@ -84,6 +84,10 @@
   <hr>
   <h1>Vue and HttP</h1>
   <hr>
+
+  <h1>Tutorial 45 HTTP GET Request</h1>
+  <postList/>
+  <hr>
   
 
 </template>
@@ -101,6 +105,7 @@ import TabA from './components/TabA.vue'
 import TabB from './components/TabB.vue'
 import TabC from './components/TabC.vue'
 import Portal from './components/Portal.vue'
+import PostList from './components/PostList.vue'
 
 
 export default {
@@ -117,7 +122,8 @@ export default {
     TabA,
     TabB,
     TabC,
-    Portal
+    Portal,
+    PostList
   },
 
   //this enables us to share data across several leveles of components
