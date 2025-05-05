@@ -63,12 +63,26 @@
     <childStyles/>
   <hr>
   <h1>Dynamic Components</h1>
-  <button>Tab A</button>
-  <button>Tab B</button>
-  <button>Tab C</button>
-  <TabA/>
-  <TabB/>
-  <TabC/>
+  <button @click="activeTab='TabA'">Tab A</button>
+  <button @click="activeTab='TabB'">Tab B</button>
+  <button @click="activeTab='TabC'">Tab C</button>
+  <!-- <TabA v-if="activeTab==='TabA'"/>
+  <TabB v-if="activeTab==='TabB'"/>
+  <TabC v-if="activeTab==='TabC'"/> -->
+
+  <!-- keeps items alive eben though the component is still not active -->
+
+  <keep-alive>
+    <component :is="activeTab"/>
+  </keep-alive>
+  <i>This is a summarry of what is up above us</i>
+  <hr>
+  <h1>Telaport Component</h1>
+  <teleport to='#portal-root'>
+    <portal/>
+  </teleport>
+  <hr>
+  <h1>Vue and HttP</h1>
   <hr>
   
 
@@ -86,6 +100,7 @@ import ChildStyles from './components/ChildStyles.vue'
 import TabA from './components/TabA.vue'
 import TabB from './components/TabB.vue'
 import TabC from './components/TabC.vue'
+import Portal from './components/Portal.vue'
 
 
 export default {
@@ -101,7 +116,8 @@ export default {
     ChildStyles,
     TabA,
     TabB,
-    TabC
+    TabC,
+    Portal
   },
 
   //this enables us to share data across several leveles of components
@@ -118,7 +134,8 @@ export default {
       channel:'Brighter Monday',
       myName:'Kelvin',
       showPopup:false,
-      newName:''
+      newName:'',
+      activeTab:'TabA'
     }
   },
   methods:{
