@@ -88,6 +88,15 @@
   <h1>Tutorial 45 HTTP GET Request</h1>
   <postList/>
   <hr>
+
+  <h1>HTTP POST Request</h1>
+  <createPost/>
+  <hr>
+
+  <h1>Component Lifecycle Hooks</h1>
+  <p>Creation (component is about to be created. beforeCreate() all data Properties, computed propertiese and methids are not processed by the component ready to be used in created() method) - Mounting (HTML is mounted to the DOm.. beforeMount() and mounted() use before or after the component is initially rendered mounted is common) - Updating(triggered when a reactive property is invoked eg data or reerendering boforeUpdate() and updated() ) - Unmounting (when about to be removed)</p>
+  <p>Misc Methods (activated(), deactivated(), errorCaptured(), renderTracked(), renderTriggered())</p>
+  <hr>
   
 
 </template>
@@ -106,6 +115,7 @@ import TabB from './components/TabB.vue'
 import TabC from './components/TabC.vue'
 import Portal from './components/Portal.vue'
 import PostList from './components/PostList.vue'
+import CreatePost from './components/CreatePost.vue'
 
 
 export default {
@@ -123,7 +133,8 @@ export default {
     TabB,
     TabC,
     Portal,
-    PostList
+    PostList,
+    CreatePost
   },
 
   //this enables us to share data across several leveles of components
