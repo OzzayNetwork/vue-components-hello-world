@@ -8,6 +8,10 @@
             <hr/>
         </div>
     </div>
+
+    <div class="loader" v-if="isLoading">
+        Loading wait please ...
+    </div>
 </template>
 
 <script>
@@ -21,7 +25,8 @@ import axios from 'axios'
         data(){
             return {
                 posts:[],
-                errorMsg:''
+                errorMsg:'',
+                isLoading: true
             }
         },
         methods:{
@@ -36,7 +41,13 @@ import axios from 'axios'
                     this.errorMsg="Error Retrieving Data"
                 })
             }
-        }
+        },
+        mounted() {
+    // Simulate loading completion, you can adjust this to fit real conditions
+    this.isLoading = false
+    console.log("App has been mounted again")
+  }
+  
     }
 </script>
 

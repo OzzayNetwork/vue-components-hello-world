@@ -1,5 +1,9 @@
 <template>
 
+  <div class="loader" v-if="isLoading">
+    Loading wait please ...
+  </div>
+
   <!-- adding props -->
   <GreetComponent name="Bruce" heroName="Batman" />
   <GreetComponent name="Clark" heroName="Superman"/>
@@ -101,6 +105,24 @@
   <h1>TemplateRef</h1>
   <TemplateRef/>
   <hr/>
+
+  <h1>Composition APi</h1>
+  <p>The composition API is a feature in vue 3 which gives us another way to write our components more specificaly the script block</p>
+  <Data />
+  <hr>
+
+  <h1>reactivity and toRefs</h1>
+  <demoOne/>
+  <hr/>
+  <demo-two-vue/>
+
+  <hr>
+  <h1>Using composition APIs with Methods</h1>
+  <MethodsVue/>
+
+  <hr/>
+
+
   
 
 </template>
@@ -122,6 +144,11 @@ import PostList from './components/PostList.vue'
 import CreatePost from './components/CreatePost.vue'
 import Parent from './components/Parent.vue'
 import TemplateRef from './components/TemplateRef.vue';
+import Data from './components/Data.vue'
+import DemoOne from './components/DemoOne'
+import DemoTwoVue from './components/DemoTwo.vue';
+import MethodsVue from './components/Methods.vue';
+
 
 
 export default {
@@ -143,6 +170,10 @@ export default {
     CreatePost,
     Parent,
     TemplateRef,
+    Data,
+    DemoOne,
+    DemoTwoVue,
+    MethodsVue
   },
 
   //this enables us to share data across several leveles of components
@@ -160,7 +191,8 @@ export default {
       myName:'Kelvin',
       showPopup:false,
       newName:'',
-      activeTab:'TabA'
+      activeTab:'TabA',
+      isLoading: true
     }
   },
   methods:{
@@ -168,6 +200,11 @@ export default {
       this.showPopup=false
       console.log('name',name)
     }
+  },
+  mounted() {
+    // Simulate loading completion, you can adjust this to fit real conditions
+    this.isLoading = false
+    console.log("App has been mounted again")
   }
   
 }
@@ -181,6 +218,20 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.loader{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background: black;
+  color: white;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 
