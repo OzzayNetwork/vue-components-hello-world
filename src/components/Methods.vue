@@ -11,6 +11,7 @@
 
         <p>Using reactive</p>
         <h2>{{first}} {{last}}</h2>
+        <button @click="changeHero">Change Hero</button>
 
     </div>
 </template>
@@ -28,10 +29,15 @@ import {ref, reactive, toRefs} from 'vue'
             function increamentCount(){
                 count.value++
             }
+            function changeHero(){
+                state.first="Hey"
+                state.last="Ozzay"
+            }
             return{
                 count,
                 increamentCount,
-                ...toRefs(state)
+                ...toRefs(state),
+                changeHero
             }
         },
         data(){

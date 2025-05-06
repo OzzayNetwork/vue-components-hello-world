@@ -122,6 +122,14 @@
 
   <hr/>
 
+  <h1>Composition API with v Model</h1>
+  <VmodelVue/>
+  <hr>
+
+  <h1>Computed composition API</h1>
+  <ComputedCompositionapiVue/>
+  <hr>
+
 
   
 
@@ -148,6 +156,10 @@ import Data from './components/Data.vue'
 import DemoOne from './components/DemoOne'
 import DemoTwoVue from './components/DemoTwo.vue';
 import MethodsVue from './components/Methods.vue';
+import VmodelVue from './components/Vmodel.vue';
+import ComputedCompositionapiVue from './components/ComputedCompositionapi.vue';
+
+
 
 
 
@@ -173,7 +185,9 @@ export default {
     Data,
     DemoOne,
     DemoTwoVue,
-    MethodsVue
+    MethodsVue,
+    VmodelVue,
+    ComputedCompositionapiVue
   },
 
   //this enables us to share data across several leveles of components
