@@ -130,6 +130,10 @@
   <ComputedCompositionapiVue/>
   <hr>
 
+  <h1>Watch composition API</h1>
+  <WatchCompositionApiVue/>
+  <hr>
+
 
   
 
@@ -158,6 +162,8 @@ import DemoTwoVue from './components/DemoTwo.vue';
 import MethodsVue from './components/Methods.vue';
 import VmodelVue from './components/Vmodel.vue';
 import ComputedCompositionapiVue from './components/ComputedCompositionapi.vue';
+import WatchCompositionApiVue from './components/Watch.Composition.Api.vue';
+
 
 
 
@@ -187,7 +193,8 @@ export default {
     DemoTwoVue,
     MethodsVue,
     VmodelVue,
-    ComputedCompositionapiVue
+    ComputedCompositionapiVue,
+    WatchCompositionApiVue
   },
 
   //this enables us to share data across several leveles of components
