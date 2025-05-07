@@ -137,12 +137,38 @@
   <h1>Replacing Provide/Inject</h1>
   <ProvideInjectCompositionVue/>
 
+  <hr>
+  <h1>Routing the Vie Project</h1>
+  <div id="nav">
+    <router-link to="/">Home</router-link>
+    <router-link :to="{name:'About'}">About</router-link>
+    <router-link :to="{name:'Jobs'}">Jobs</router-link>
+
+    <a href="/about">About Link</a>
+
+    <br>
+    <br>
+
+    <button @click="redirect">Redirect</button>
+    <button @click="back">Go back</button>
+    <button @click="forward">Go Forward</button>
+
+    
+
+
+  </div>
+  <router-view/>
+
+
+
 
   
 
 </template>
 
 <script>
+import router from './router'
+import { createApp } from 'vue'
 import Article from './components/Article.vue';
 import GreetComponent from './components/Great.vue';
 import ComponentC from  './components/ComponentC.vue'
@@ -226,7 +252,16 @@ export default {
     closePopup(name){
       this.showPopup=false
       console.log('name',name)
-    }
+    },
+
+    redirect(){
+      this.$router.push({name:'Home'})
+    },
+    back(){
+      // this.$router.go(steps)
+      this.$router.go(-1)
+    },
+    forward(){this.$router.go(1)}
   },
   mounted() {
     // Simulate loading completion, you can adjust this to fit real conditions
@@ -260,6 +295,8 @@ export default {
   justify-content: center;
   text-align: center;
 }
-
+a{
+  margin: 5px;
+}
 
 </style>
