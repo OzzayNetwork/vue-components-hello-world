@@ -134,6 +134,9 @@
   <WatchCompositionApiVue/>
   <hr>
 
+  <h1>Replacing Provide/Inject</h1>
+  <ProvideInjectCompositionVue/>
+
 
   
 
@@ -163,6 +166,8 @@ import MethodsVue from './components/Methods.vue';
 import VmodelVue from './components/Vmodel.vue';
 import ComputedCompositionapiVue from './components/ComputedCompositionapi.vue';
 import WatchCompositionApiVue from './components/Watch.Composition.Api.vue';
+import ProvideInjectCompositionVue from './components/ProvideInject.composition.vue';
+
 
 
 
@@ -194,7 +199,8 @@ export default {
     MethodsVue,
     VmodelVue,
     ComputedCompositionapiVue,
-    WatchCompositionApiVue
+    WatchCompositionApiVue,
+    ProvideInjectCompositionVue
   },
 
   //this enables us to share data across several leveles of components
